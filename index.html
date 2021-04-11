@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/960520a99f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Simple Kanban Board</title>
+</head>
+<body>
+	<h2>Kanban Board</h2>
+	<form class="addTodo" id="form">
+		<input type="text" name="todo" placeholder="Type new todo here..." id="input"/>
+		<input type="submit" name="add" value="Add Todo"/>
+	</form>
+	<div class="boards">
+		<div class="board">
+			<h3>Todo</h3>
+			<div class="dropzone" id="dropzone" data-state="todo" ondragover="dragover(event)" ondrop="drop(event)" ondragleave="dragleave(event)"></div>
+		</div>
+		<div class="board">
+			<h3>In Progress</h3>
+			<div class="dropzone" id="dropzone" data-state="inProgress" ondragover="dragover(event)" ondrop="drop(event)" ondragleave="dragleave(event)"></div>
+		</div>
+		<div class="board">
+			<h3>Done</h3>
+			<div class="dropzone" id="dropzone" data-state="done" ondragover="dragover(event)" ondrop="drop(event)" ondragleave="dragleave(event)"></div>
+		</div>
+	</div>
+	<div class="delete" ondragover="dragoverDelete(event)" ondrop="dropDelete(event)" ondragleave="dragleave(event)">
+		<i class="fas fa-trash-alt fa-5x"></i>
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
